@@ -5,14 +5,16 @@ const mysql = require("mysql");
 
 const conn = mysql.createConnection({
   host: process.env.HOST || "localhost",
-  port: 8081,
+  port: process.env.PORT || 8081,
   user: "root",
   password: "password",
   database: "hokibento",
 });
 
 app.get("/", (req, res) => {
-  res.send("welcome docker images nodejs " + process.env.NAME);
+  res.send(
+    "welcome docker images nodejs aja bikiin otomatis" + process.env.NAME
+  );
 });
 
 const { promisify } = require("util");
