@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "docker build -t dino96112/node-app .",
-    "delete": "docker rm --force backend"
+    "delete": "docker rm --force backend",
+    "container": "docker container run -d --name backend -p 49160:5000 -e NAME=coba -e HOST=mysqlserver dino96112/node-app",
+    "deploy": "npm run delete && npm run container "
   },
   "author": "",
   "license": "ISC",
