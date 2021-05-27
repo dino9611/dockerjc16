@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  backend:
+    build: .
+    image: dino96112/node-app
+    container_name: backend
+    ports:
+      - 49160:5000
+    networks:
+      - node-network
+    environment:
+      - NAME=coba
+      - HOST=mysqlserver
+      - PORT=3306
+  backend1:
+    build: .
+    image: dino96112/node-app
+    container_name: backend1
+    ports:
+      - 49161:5000
+    networks:
+      - node-network
+    environment:
+      - NAME=coba
+      - HOST=mysqlserver
+      - PORT=3306
+networks:
+  node-network:
+    external: true

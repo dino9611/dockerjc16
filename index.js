@@ -13,7 +13,8 @@ const conn = mysql.createConnection({
 
 app.get("/", (req, res) => {
   res.send(
-    "welcome docker images nodejs aja bikiin otomatis" + process.env.NAME
+    "welcome docker images dari compose baru updatesss aja bikiin otomatis" +
+      process.env.NAME
   );
 });
 
