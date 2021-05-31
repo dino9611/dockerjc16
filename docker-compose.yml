@@ -25,6 +25,20 @@ services:
       - NAME=coba
       - HOST=mysqlserver
       - PORT=3306
+  mysqlaja1:
+    image: mysql
+    container_name: mysqlaja1
+    ports:
+      - 8083:3306
+    volumes:
+      - mysqldata:/var/lib/mysql
+    networks:
+      - node-network
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+volumes:
+  mysqldata:
+    external: true
 networks:
   node-network:
     external: true
